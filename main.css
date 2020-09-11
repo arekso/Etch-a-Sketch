@@ -1,0 +1,32 @@
+@media screen{
+#container{
+    text-align: center;
+}
+button{
+    text-align: center;
+    align-content: center;
+}
+
+h1{
+    background-color: burlywood;
+    text-align: center;
+}
+
+#sketch{
+    background-color: rgb(17, 0, 255);
+    border: 2px solid black;
+    width: 600px;
+    height: 600px;
+    display: inline-flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    position: relative;
+}
+
+.cell {
+    background-color: rgb(0, 255, 255);
+    border: 1px solid black;
+    flex-grow: 1;
+    align-content: center;
+    }
+}
