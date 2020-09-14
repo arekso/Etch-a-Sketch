@@ -14,12 +14,11 @@
         <button id="newGridBtn">New Grid</button>
     </div>
 
-    <div id="sketch" class="etch"></div>
+    <div id="sketch"></div>
 
     <script>
-
-        //const sketch = document.getElementById('sketch');
-        const sketch = document.querySelector('#sketch');
+        const sketch = document.getElementById('sketch');
+        //const sketch = document.querySelector('#sketch');
 
         const newGridBtn = document.querySelector('#newGridBtn');
         newGridBtn.addEventListener('click', main);
@@ -38,11 +37,7 @@
             for (let box = 0; box < (input * input); box++) {
                 const cell = document.createElement('div');
                 cell.className = 'cell';
-                //cell.className = 'sketch';
                 cell.style.flexBasis = `${(1 / input) * 100}%`;
-                //cell.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
-                //cell.style.gridTemplateColumns = `repeat(${1/input * 100}, 1fr)`;
-                //cell.style.gridTemplateRows = `repeat(${1/input * 100}, 1fr)`;
                 cell.addEventListener('mouseover', changeColor);
                 sketch.appendChild(cell);
             }
