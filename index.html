@@ -16,7 +16,6 @@
 
     <div id="sketch" class="etch"></div>
 
-
     <script>
 
         //const sketch = document.getElementById('sketch');
@@ -25,23 +24,25 @@
         const newGridBtn = document.querySelector('#newGridBtn');
         newGridBtn.addEventListener('click', main);
 
-        alert("hello");
-
         function main() {
-            let input = 0;
-            makeGrid(input);
+            this.input = input; 
+            sketch.innerHTML = '';
             input = prompt("write in a number for the grid");
             makeGrid(input);
         }
-
-        window.onload = makeGrid(16);
+        
+        let input = 16;
+        makeGrid(input);
 
         function makeGrid(input) {
             for (let box = 0; box < (input * input); box++) {
                 const cell = document.createElement('div');
                 cell.className = 'cell';
                 //cell.className = 'sketch';
-                cell.style.flexBasis = `${ ((1)/ input * 100) }%`;
+                cell.style.flexBasis = `${(1 / input) * 100}%`;
+                //cell.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
+                //cell.style.gridTemplateColumns = `repeat(${1/input * 100}, 1fr)`;
+                //cell.style.gridTemplateRows = `repeat(${1/input * 100}, 1fr)`;
                 cell.addEventListener('mouseover', changeColor);
                 sketch.appendChild(cell);
             }
