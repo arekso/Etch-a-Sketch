@@ -17,22 +17,22 @@
     <div id="sketch"></div>
 
     <script>
+        
+        //Declaring variables
+        //const sketch = document.querySelector('#sketch'); //same as getElementbyId
         const sketch = document.getElementById('sketch');
-        //const sketch = document.querySelector('#sketch');
-
         const newGridBtn = document.querySelector('#newGridBtn');
         newGridBtn.addEventListener('click', main);
 
+        //function called when button clicked
         function main() {
             this.input = input; 
             sketch.innerHTML = '';
             input = prompt("write in a number for the grid");
             makeGrid(input);
         }
-        
-        let input = 16;
-        makeGrid(input);
 
+        //fucntion to make grid
         function makeGrid(input) {
             for (let box = 0; box < (input * input); box++) {
                 const cell = document.createElement('div');
@@ -43,10 +43,15 @@
             }
         }
 
+        //function to change color when mouse is hovered over
         function changeColor(e) {
             e.target.style.background = 'white';
         }
 
+
+        //Calls on the function onload screen
+        let input = 16;
+        window.onload = makeGrid(input);
     </script>
 </body>
 
