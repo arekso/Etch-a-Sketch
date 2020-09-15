@@ -1,58 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset='utf-8'>
-    <title>Etch-a-Sketch</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <!--script src='main.js'></script-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arek's Calculator</title>
+    <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+
+
 </head>
 
 <body>
-    <div id="container">
-        <h1>Etch-a-sketch</h1>
-        <button id="newGridBtn">New Grid</button>
+    <script src="main.js"></script>
+
+    <div id="hero" class="hero-image">
+        <form id="calculator">
+            <div id="paragraph">
+                <h3>Basic Calculator</h3>
+                <p id="screen"></p>
+            </div>
+            <div id="buttons" class="buttons">
+                <div id="set1">
+                    <button id="btn1">1</button>
+                    <button id="btn2">2</button>
+                    <button id="btn3">3</button>
+                    <button id="btnp">+</button>
+                    <button id="btne">=</button>
+                </div>
+                <div id="set2">
+                    <button id="btn5">4</button>
+                    <button id="btn6">5</button>
+                    <button id="btn7">6</button>
+                    <button id="btns">-</button>
+                </div>
+                <div id="set3">
+                    <button id="btn7">7</button>
+                    <button id="btn8">8</button>
+                    <button id="btn9">9</button>
+                    <button id="btnx">x</button>
+                </div>
+                <div id="set4">
+                    <button id="btnC">C</button>
+                    <button id="btn0">0</button>
+                    <button id="btn_">.</button>
+                    <button id="btnd">÷</button>
+                </div>
+            </div>
+        </form>
     </div>
-
-    <div id="sketch"></div>
-
-    <script>
-        
-        //Declaring variables
-        //const sketch = document.querySelector('#sketch'); //same as getElementbyId
-        const sketch = document.getElementById('sketch');
-        const newGridBtn = document.querySelector('#newGridBtn');
-        newGridBtn.addEventListener('click', main);
-
-        //function called when button clicked
-        function main() {
-            this.input = input; 
-            sketch.innerHTML = '';
-            input = prompt("write in a number for the grid");
-            makeGrid(input);
-        }
-
-        //fucntion to make grid
-        function makeGrid(input) {
-            for (let box = 0; box < (input * input); box++) {
-                const cell = document.createElement('div');
-                cell.className = 'cell';
-                cell.style.flexBasis = `${(1 / input) * 100}%`;
-                cell.addEventListener('mouseover', changeColor);
-                sketch.appendChild(cell);
-            }
-        }
-
-        //function to change color when mouse is hovered over
-        function changeColor(e) {
-            e.target.style.background = 'white';
-        }
-
-
-        //Calls on the function onload screen
-        let input = 16;
-        window.onload = makeGrid(input);
-    </script>
 </body>
 
 </html>
